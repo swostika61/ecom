@@ -16,7 +16,7 @@ const Cards: React.FC<IProductsProps> = ({ data }) => {
       {/* products detail  */}
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{data?.title}</div>
-        <p className="text-gray-700 text-base">{data?.description}</p>
+        {/* <p className="text-gray-700 text-base">{data?.description}</p> */}
       </div>
       <div className="px-6 py-2">
         <span className="text-blue-500 text-lg font-bold">

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 type Props = {};
 
@@ -18,10 +19,16 @@ function Navbar({}: Props) {
         <div className="mx-2">
           <a href="#">my account</a>
         </div>
-          </div>
-          <div className="py-4 px-12">
-              <h1 className="font-bold text-3xl">STORE<span className="text-blue-500">.</span></h1>
-          </div>
+      </div>
+      <div className="py-4 px-12 flex justify-between items-center">
+        <Link to="/dashboard">
+          <h1 className="font-bold text-3xl ">
+            STORE<span className="text-blue-500">.</span>
+          </h1>
+        </Link>
+
+        <i className="fa-solid fa-cart-shopping hover:text-blue-500 text-2xl" />
+      </div>
     </>
   );
 }
