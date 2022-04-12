@@ -5,8 +5,9 @@ import "./App.css";
 import Home from "./pages/Home";
 // components
 import Navbar from "./components/Navbar";
-import { getProducts } from "./services/Products";
+import { getProducts } from "./services/ProductServices";
 import NoMatch from "./pages/NoMatch";
+import SingleProduct from "./pages/SingleProduct";
 
 const App = () => {
   const [products, setProducts] = useState<IProducts[]>([]);
@@ -22,6 +23,7 @@ const App = () => {
       <Routes>
         <Route path="/dashboard" element={<Home products={products} />} />
         <Route index element={<Home products={products} />} />
+        <Route path="products/:productId" element={<SingleProduct />} />
         <Route path="*" element={<NoMatch />} />
       </Routes>
     </>

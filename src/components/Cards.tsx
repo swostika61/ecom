@@ -20,7 +20,7 @@ const Cards: React.FC<IProductsProps> = ({ data }) => {
       </div>
       <div className="px-6 py-2">
         <span className="text-blue-500 text-lg font-bold">
-          Rs {data?.price}
+          ${data?.price}
         </span>
       </div>
 
