@@ -38,7 +38,7 @@ const SingleProduct = () => {
                     {/* <!-- Card title and subtitle --> */}
                     <div className="w-full font-bold lg:w-1/5 lg:border-right lg:border-solid text-center md:text-left">
                       <h3>{filteredProduct.title}</h3>
-                      <p className="mb-0 mt-3 text-blue-500 text-sm italic">
+                      <p className="mb-0 mt-3 font-normal text-blue-500 text-sm italic">
                         Price : ${filteredProduct.price}
                       </p>
                       <hr className="w-1/4 md:ml-0 mt-4  border lg:hidden" />

@@ -21,8 +21,8 @@ const App = () => {
       <Navbar />
       {/* products display  */}
       <Routes>
-        <Route path="/dashboard" element={<Home products={products} />} />
-        <Route index element={<Home products={products} />} />
+        <Route path="/dashboard" element={<Home />} />
+        <Route index element={<Home />} />
         <Route path="products/:productId" element={<SingleProduct />} />
         <Route path="*" element={<NoMatch />} />
       </Routes>
