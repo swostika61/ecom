@@ -1,18 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getProducts } from "../services/ProductServices";
+import { CartState } from "../context/Context";
 const SingleProduct = () => {
   let params = useParams();
   const id = params.productId;
-  const [products, setProducts] = useState<IProducts[]>([]);
-  useEffect(() => {
-    const product = getProducts()
-      .then((res: IProducts[]) => setProducts(res))
-      .catch((err) => console.log(err));
-  }, []);
+  const { state } = CartState()
+  
   return (
     <div className="container mt-32 mx-auto p-4 md:p-0">
-      {products
+      {
+      state?.products
         .filter((prd) => prd.id == id)
         .map((filteredProduct) => (
           <>
