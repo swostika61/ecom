@@ -20,6 +20,7 @@ function Navbar({}: Props) {
           <a href="#">my account</a>
         </div>
       </div>
+      {/* main navigation bar  */}
       <div className="py-4 px-12 flex justify-between items-center">
         <Link to="/dashboard">
           <h1 className="font-bold text-3xl ">
@@ -36,6 +37,7 @@ function Navbar({}: Props) {
           </span>
         </div>
       </div>
+      {/* end of main navigation bar  */}
     </>
   );
 }

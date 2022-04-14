@@ -4,6 +4,7 @@ export interface IProductsProps {
 }
 const Cards: React.FC<IProductsProps> = ({ data }) => {
   return (
+    // Card layout 
     <div className="max-w-xs rounded overflow-hidden shadow-lg ">
       {/* image  */}
       <div className="flex w-full justify-center">
@@ -16,7 +17,6 @@ const Cards: React.FC<IProductsProps> = ({ data }) => {
       {/* products detail  */}
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{data?.title}</div>
-        {/* <p className="text-gray-700 text-base">{data?.description}</p> */}
       </div>
       <div className="px-6 py-2">
         <span className="text-blue-500 text-lg font-bold">
@@ -29,7 +29,9 @@ const Cards: React.FC<IProductsProps> = ({ data }) => {
           #{data?.category}
         </span>
       </div>
+      {/* end of products details  */}
     </div>
+    // end of card layout 
   );
 };
 

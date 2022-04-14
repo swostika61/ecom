@@ -38,7 +38,7 @@ export const Context: React.FC = ({ children }) => {
   }, []);
   return <Cart.Provider value={{ state, dispatch }}>{children}</Cart.Provider>;
 };
-
+// exporting the state and dispatch method 
 export const CartState = () => {
   return useContext(Cart);
 };
