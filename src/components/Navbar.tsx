@@ -30,7 +30,12 @@ function Navbar({}: Props) {
         <div className="relative">
           <i className="fa-solid fa-cart-shopping hover:text-blue-500 text-2xl" />
           <span
-            style={{ height: "15px", width: "15px", top:"-2.5px", right:"-7.5px" }}
+            style={{
+              height: "15px",
+              width: "15px",
+              top: "-2.5px",
+              right: "-7.5px",
+            }}
             className="flex justify-center items-center absolute  rounded-full text-xs text-white bg-red-600 "
           >
             0

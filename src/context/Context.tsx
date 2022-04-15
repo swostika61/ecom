@@ -9,7 +9,7 @@ import { cartReducer } from "./Reducers";
 import { IAction } from "./Reducers";
 export interface IInitialState {
   products: IProducts[];
-  cart: number[];
+  cart: IProducts[];
 }
 const initialState = {
   products: [],

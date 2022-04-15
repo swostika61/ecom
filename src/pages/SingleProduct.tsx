@@ -1,18 +1,21 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+
+import Rating from "../components/Rating";
 import { CartState } from "../context/Context";
 const SingleProduct = () => {
   let params = useParams();
+  let navigate = useNavigate();
   const id = params.productId;
-  const { state } = CartState()
-  
+  const { state } = CartState();
+  const handleClick = (filteredProduct: IProducts) => {
+    console.log("/cart");
+  };
   return (
     <div className="container mt-32 mx-auto p-4 md:p-0">
-      {
-      state?.products
+      {state?.products
         .filter((prd) => prd.id == id)
         .map((filteredProduct) => (
-          <>
+          <div key={filteredProduct.id}>
             {/* image  */}
             <div className="flex w-full justify-center">
               <img
@@ -38,6 +41,10 @@ const SingleProduct = () => {
                       <p className="mb-0 mt-3 font-normal text-blue-500 text-sm italic">
                         Price : ${filteredProduct.price}
                       </p>
+                      <Rating
+                        rate={Math.floor(filteredProduct.rating?.rate ?? 0)}
+                      />
+
                       <hr className="w-1/4 md:ml-0 mt-4  border lg:hidden" />
                     </div>
                     {/* <!-- ./Card title and subtitle --> */}
@@ -52,7 +59,10 @@ const SingleProduct = () => {
 
                     {/* <!-- Call to action button --> */}
                     <div className="w-full lg:w-1/5 mt-6 lg:mt-0 lg:px-4 text-center md:text-left">
-                      <button className="bg-white hover:bg-blue-500 hover:text-white border border-solid border-grey w-1/3 lg:w-full py-2">
+                      <button
+                        className="bg-white hover:bg-blue-500 hover:text-white border border-solid border-grey w-1/3 lg:w-full py-2"
+                        onClick={() => handleClick(filteredProduct)}
+                      >
                         Buy now
                       </button>
                     </div>
@@ -64,7 +74,7 @@ const SingleProduct = () => {
               </div>
               {/* <!-- ./Card body --> */}
             </div>
-          </>
+          </div>
         ))}
       {/* <!-- ./Card wrapper --> */}
     </div>
