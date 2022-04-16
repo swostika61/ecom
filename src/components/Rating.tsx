@@ -5,7 +5,7 @@ interface IRate {
 const Rating: React.FC<IRate> = ({ rate }) => {
   return (
     <div className="flex justify-center sm:justify-start my-1">
-      {Array.from(Array(rate).keys()).map((value, key) => (
+      {Array.from(new Array(rate)).map((value, key) => (
         <svg
           key={key}
           aria-hidden="true"
