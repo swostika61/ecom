@@ -1,15 +1,13 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Button from "../components/Button";
 
 import Rating from "../components/Rating";
 import { CartState } from "../context/Context";
-import { cartReducer } from "../context/Reducers";
 const SingleProduct = () => {
   let params = useParams();
-  let navigate = useNavigate();
   const id = params.productId;
   const { state, dispatch } = CartState();
-
+  console.log("cart:" + state?.cart);
   return (
     <div className="container mt-32 mx-auto p-4 md:p-0">
       {state?.products
@@ -60,7 +58,15 @@ const SingleProduct = () => {
                     {/* <!-- Call to action button --> */}
                     <div className="w-full lg:w-1/5 mt-6 lg:mt-0 lg:px-4 text-center md:text-left">
                       {state.cart.some((p) => p.id === filteredProduct.id) ? (
-                        <Button hcolor="hover:bg-red-500">
+                        <Button
+                          onclick={() => {
+                            dispatch?.({
+                              type: "REMOVE_FROM_CART",
+                              payload: filteredProduct,
+                            });
+                          }}
+                          hcolor="hover:bg-red-500"
+                        >
                           Remove from Cart
                         </Button>
                       ) : (
