@@ -8,7 +8,7 @@ import Navbar from "./components/Navbar";
 import { getProducts } from "./services/ProductServices";
 import NoMatch from "./pages/NoMatch";
 import SingleProduct from "./pages/SingleProduct";
-import Cart from "./components/Cart";
+import Cart from "./pages/Cart";
 
 const App = () => {
   const [products, setProducts] = useState<IProducts[]>([]);
