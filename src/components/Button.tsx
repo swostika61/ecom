@@ -1,6 +1,5 @@
 import React from "react";
 interface IButtonProps {
-  children: React.ReactNode;
   hcolor?: string;
   onclick?:()=>void
 }

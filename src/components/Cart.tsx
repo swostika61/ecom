@@ -3,6 +3,7 @@ import { CartState } from "../context/Context";
 
 const Cart = () => {
   const { state, dispatch } = CartState();
+  // const [total, setTotal]= useState()
   return (
     <div>
       {state?.cart.map((prod) => {

@@ -7,7 +7,7 @@ export interface IAction {
 export const cartReducer = (state: IInitialState, action: IAction) => {
   switch (action.type) {
     case "ADD_TO_CART":
-      return { ...state, cart: [...state.cart, { ...action.payload, qty: 1 }] };
+      return { ...state, cart: [...state.cart, { ...action.payload }] };
     case "REMOVE_FROM_CART":
       return {
         ...state,
