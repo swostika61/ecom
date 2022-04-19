@@ -8,14 +8,16 @@ const Cart = () => {
   // const [total, setTotal]= useState()
   const totalCartLength: number = state?.cart.length ?? 0;
   return totalCartLength > 0 ? (
-    <div className="grid grid-cols-2 px-6">
+    <div className="grid grid-cols-2 px-6 gap-3">
       <div>
         {state?.cart.map((prod) => {
           return <div>{prod.title}</div>;
         })}
       </div>
       <div>
-        <PriceCard>Total items :{state?.cart.length}</PriceCard>
+        <PriceCard>
+          <span className="font-bold">Total items : {state?.cart.length}</span>
+        </PriceCard>
       </div>
     </div>
   ) : (

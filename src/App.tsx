@@ -9,6 +9,7 @@ import { getProducts } from "./services/ProductServices";
 import NoMatch from "./pages/NoMatch";
 import SingleProduct from "./pages/SingleProduct";
 import Cart from "./pages/Cart";
+import Footer from "./components/Footer";
 
 const App = () => {
   const [products, setProducts] = useState<IProducts[]>([]);
@@ -20,15 +21,19 @@ const App = () => {
   console.log(products);
   return (
     <>
-      <Navbar />
-      {/* products display  */}
-      <Routes>
-        <Route path="/dashboard" element={<Home />} />
-        <Route index element={<Home />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="products/:productId" element={<SingleProduct />} />
-        <Route path="*" element={<NoMatch />} />
-      </Routes>
+      <div className="min-h-full" style={{ minHeight:`calc(100vh - 50px)`}}>
+        <Navbar />
+        {/* products display  */}
+        <Routes>
+          <Route path="/dashboard" element={<Home />} />
+          <Route index element={<Home />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="products/:productId" element={<SingleProduct />} />
+          <Route path="*" element={<NoMatch />} />
+        </Routes>
+      </div>
+
+      <Footer />
     </>
   );
 };
