@@ -1,11 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { CartState } from "../context/Context";
 
 type Props = {};
 
 function Navbar({}: Props) {
   const { state, dispatch } = CartState();
+  const location = useLocation();
   return (
     <>
       <div className="w-full border-b border-gray-200 flex justify-between p-2 uppercase text-zinc-500 text-xs font-semibold	">
@@ -32,7 +33,7 @@ function Navbar({}: Props) {
         <Link to="/cart">
           <div className="relative">
             <i className="fa-solid fa-cart-shopping hover:text-blue-500 text-2xl" />
-            {state?.cart.length ? (
+            {state?.cart.length && location.pathname !== "/cart" ? (
               <span
                 style={{
                   height: "15px",
