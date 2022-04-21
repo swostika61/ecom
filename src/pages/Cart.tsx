@@ -9,12 +9,12 @@ import { cartReducer } from "../context/Reducers";
 const Cart = () => {
   const { state, dispatch } = CartState();
   const [total, setTotal] = useState<number | null>();
-  const cart = state?.cart??[];
+  const cart = state?.cart;
   const totalCartLength: number = state?.cart.length ?? 0;
   useEffect(() => {
     setTotal(
       cart?.reduce(
-        (previousValue, currentValue) => previousValue + currentValue.price,
+        (previousValue, currentValue) => previousValue + currentValue?.price! ,
         0
       )
     );
@@ -32,8 +32,8 @@ const Cart = () => {
       </div>
       <div>
         <PriceCard>
-          <span className="font-bold">Total items : {state?.cart.length}</span>
-          <p>total:{total}</p>
+          <span className="font-bold ">Total items : {state?.cart.length}</span>
+          <p className="my-6 font-serif">total price: ${total}</p>
           <Button
             hcolor="hover:bg-blue-500"
             disabled={state?.cart.length === 0}
